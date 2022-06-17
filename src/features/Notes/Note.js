@@ -52,7 +52,7 @@ function Note({ notes, onDelete }) {
   }, []);
   return (
     <div>
-      <div className="note" onClick={() => handleShow()}>
+      <div className="note">
         <h1>{notes.title}</h1>
         <p>{notes.content}</p>
 
