@@ -79,7 +79,7 @@ const noteApi = {
           .doc(newTrash.id)
           .set(newTrash)
           .then((docReff) => {
-            console.log("ok");
+            console.log(" thêm dữ kiệu vagfo notes");
 
             const docRef = db
               .collection("users")
@@ -90,6 +90,7 @@ const noteApi = {
                 query.forEach((doc) => {
                   const data1 = doc.data();
                   data1.id = doc.id;
+                  console.log(data1)
                   a.push(data1);
                 });
 

@@ -11,6 +11,7 @@ import { AiOutlinePicture } from "react-icons/ai";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { BiBellPlus, BiUndo, BiRedo } from "react-icons/bi";
 import { RiInboxArchiveLine, RiMore2Fill } from "react-icons/ri";
+
 function Note({ notes, onDelete }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
@@ -35,9 +36,12 @@ function Note({ notes, onDelete }) {
     });
   }
 
-  async function UpdateNote() {
-    const action = updateNote(note);
-    const actionResult = await dispatch(action);
+   function UpdateNote() {
+  
+    console.log("đoi ok nhoa");
+    dispatch(
+      updateNote(note));
+    
     setShow(false);
   }
 
@@ -89,6 +93,7 @@ function Note({ notes, onDelete }) {
               name="content"
               placeholder="Take a note..."
               style={{ width: "95%", border: "none" }}
+              onChange={handleChange}
             ></textarea>
           </p>
         </Modal.Body>

@@ -14,7 +14,7 @@ function SignUp() {
     if (data.name === "" || data.age < 0) {
       alert("Please fill full name and valid age!");
     } else {
-      auth
+      auth  
         .createUserWithEmailAndPassword(data.email, data.password)
         .then((userCredentials) => {
           const user = userCredentials.user;

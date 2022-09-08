@@ -23,7 +23,7 @@ export const updateNote = createAsyncThunk("note/updateNote", async (note) => {
 });
 
 export const RehibiliTrash = createAsyncThunk(
-  "note/RehibiliTrash",
+  "note/rehibiliTrash",
   async (note) => {
     const currentUser = await noteApi.RehibiliTrash(note);
     return currentUser;
@@ -51,6 +51,9 @@ const noteSlice = createSlice({
       state.current = action.payload;
     },
     [addNote.fulfilled]: (state, action) => {
+      state.current = action.payload;
+    },
+    [RehibiliTrash.fulfilled]: (state, action) => {
       state.current = action.payload;
     },
     [updateNote.fulfilled]: (state, action) => {
